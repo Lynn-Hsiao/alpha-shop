@@ -17,13 +17,13 @@ Here are the steps to install and start the server:
 1. Clone the repository:
 
 ```
-    git clone https://github.com/Lynn-Hsiao/Alpha_Shop.git
+    git clone https://github.com/Lynn-Hsiao/alpha-shop
 ```
 
 2. Install the dependencies and start the server:
 
 ```
-    cd alpha_shop
+    cd alpha-shop
 ```
 
 ```
