@@ -1,5 +1,7 @@
 # Alpha Shop
 
+![Cover Page](https://github.com/Lynn-Hsiao/alpha-shop/blob/main/public/images/Stage1shot.png)
+
 This is an online shop with step control bar to show big picture of every stage. 
 
 With 3 form - basic information / delivery information and payment information to collect data needed.
