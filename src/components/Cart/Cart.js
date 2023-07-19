@@ -24,26 +24,32 @@ const totalPrice = cartItem.reduce((accumulator, item) => {
   return accumulator + itemTotalPrice;
 }, 0)
 
-function Product () {
+function Item({id, name, img, price, quantity}) {
   return (
-    <>
-    {cartItem.map(item => (
-      <div className={styles.productContainer} data-count="0" data-price={item.price} key={item.id}>
-      <img className={styles.imgContainer} src={item.img} alt={item.name}/>
+    <div className={styles.productContainer} data-count="0" data-price={price} key={id}>
+      <img className={styles.imgContainer} src={img} alt={name}/>
       <div className={styles.productInfo}>
-        <div className={styles.productName}>{item.name}</div>
+        <div className={styles.productName}>{name}</div>
         <div className={styles.productControlContainer}>
           <div className={styles.productControl}>
             <Minus className={styles.minus} />
-            <span className={styles.productCount}>{item.quantity}</span>
+            <span className={styles.productCount}>{quantity}</span>
             <Plus className={styles.plus} />
           </div>
         </div>
-        <div className={styles.productPrice}>${item.price}</div>
+        <div className={styles.productPrice}>${price}</div>
       </div>
-      </div>
-      ))
-    }
+    </div>
+  )
+}
+
+function Product ( ) {
+  return (
+    <>
+    {cartItem.map(item =>
+    //<Item {...item} /> = <Item id={item.id} name={item.name} img={item.img} price={item.price} quantity={item.quantity} /> 
+      <Item {...item} key={item.id} />
+    )}
     </>
   )
 }
@@ -61,6 +67,7 @@ function Cart () {
         <div className={styles.productInfoText}>運費</div>
         <div className={styles.productInfoPrice}>免費</div>
       </section>
+      
       <section className={styles.cartInfo}>
         <div className={styles.productInfoText}>小計</div>
         <div className={styles.productInfoPrice}>${totalPrice}</div>
