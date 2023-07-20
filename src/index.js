@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import styles from './index.module.css';
 import reportWebVitals from './reportWebVitals';
+import Header from './components/Header/Header'
 import StepProgress from './components/Step/StepProgress/StepProgress';
 import StepOneAddress from './components/Step/Step/StepOneAddress'
 import StepTwoShipping from './components/Step/Step/StepTwoShipping'
@@ -12,6 +13,7 @@ import Cart from './components/Cart/Cart'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Header />
     <div className={styles.mainContainer}>
       <div className={styles.step}>
         <StepProgress/>
