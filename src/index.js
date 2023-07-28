@@ -3,11 +3,7 @@ import ReactDOM from 'react-dom/client';
 import styles from './index.module.css';
 import reportWebVitals from './reportWebVitals';
 import Header from './components/Header/Header'
-import StepProgress from './components/Step/StepProgress/StepProgress';
-import StepOneAddress from './components/Step/Step/StepOneAddress'
-import StepTwoShipping from './components/Step/Step/StepTwoShipping'
-import StepThreePayment from './components/Step/Step/StepThreePayment'
-import ProgressControl from './components/Step/ProgressControl/ProgressControl'
+import Register from './components/Main/Register/Register'
 import Cart from './components/Main/Cart/Cart'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,15 +11,7 @@ root.render(
   <React.StrictMode>
     <Header />
     <div className={styles.mainContainer}>
-      <div className={styles.step}>
-        <StepProgress/>
-        <section className={styles.formContainer}>
-          <StepOneAddress/>
-          <StepTwoShipping/>
-          <StepThreePayment/>
-        </section>
-        <ProgressControl/> 
-      </div>
+      <Register />
       <Cart className={styles.cart} />
     </div>
   </React.StrictMode>
