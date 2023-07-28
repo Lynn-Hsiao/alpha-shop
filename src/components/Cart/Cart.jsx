@@ -29,7 +29,6 @@ function Cart () {
   const [totalPrice, setTotalPrice] = useState(0)
 
   function calculate(price) {
-    console.log(price)
     setTotalPrice(totalPrice + price)
   }
   
