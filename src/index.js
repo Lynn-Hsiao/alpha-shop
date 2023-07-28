@@ -8,7 +8,7 @@ import StepOneAddress from './components/Step/Step/StepOneAddress'
 import StepTwoShipping from './components/Step/Step/StepTwoShipping'
 import StepThreePayment from './components/Step/Step/StepThreePayment'
 import ProgressControl from './components/Step/ProgressControl/ProgressControl'
-import Cart from './components/Cart/Cart'
+import Cart from './components/Main/Cart/Cart'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

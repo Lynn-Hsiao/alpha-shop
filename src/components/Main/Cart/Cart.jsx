@@ -1,8 +1,8 @@
 import styles from './Cart.module.css'
 import productsData from './productData'
 import { useState } from 'react'
-import { ReactComponent as Plus } from '../../icons/plus.svg'
-import { ReactComponent as Minus } from '../../icons/minus.svg'
+import { ReactComponent as Plus } from '../../../icons/plus.svg'
+import { ReactComponent as Minus } from '../../../icons/minus.svg'
 
 
 function Product ({id, name, img, price, quantity, handlePlusClick, handleMinusClick}) {
