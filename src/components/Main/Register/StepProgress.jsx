@@ -3,11 +3,8 @@ import  { ReactComponent as PgComplete } from "../../../icons/pg-complete.svg"
 
 
 function StepProgress ({step, checked}) {
-  const registerTitle = <h2 className={styles.registerTitle}>結帳</h2>
-
   return (
     <div>
-      {registerTitle}
       <section className={styles.progressContainer}>
         <span className={(step < 1) ? styles.progressGroup : styles.progressGroupActive} data-phase="address">
           <span className={styles.progressIcon}>

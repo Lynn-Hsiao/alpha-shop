@@ -3,17 +3,13 @@ import ReactDOM from 'react-dom/client';
 import styles from './index.module.css';
 import reportWebVitals from './reportWebVitals';
 import Header from './components/Header/Header'
-import Register from './components/Main/Register/Register'
-import Cart from './components/Main/Cart/Cart'
+import Main from './components/Main/Main';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Header />
-    <div className={styles.mainContainer}>
-      <Register />
-      <Cart />
-    </div>
+    <Main />
   </React.StrictMode>
 );
 

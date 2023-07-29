@@ -1,9 +1,3 @@
-.registerTitle {
-  margin-bottom: 1.3em;
-  font-size: 1.8em;
-  font-weight: border;
-}
-
 .progressContainer {
   display: flex;
   justify-content: space-between;
