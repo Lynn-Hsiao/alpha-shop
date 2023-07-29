@@ -12,7 +12,7 @@ root.render(
     <Header />
     <div className={styles.mainContainer}>
       <Register />
-      <Cart className={styles.cart} />
+      <Cart />
     </div>
   </React.StrictMode>
 );
