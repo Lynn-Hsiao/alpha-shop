@@ -15,30 +15,51 @@
 .progressGroup {
   display: flex;
   align-items: center;
+  font-weight: 700;
   color: #AFB1BD;
+}
+
+.progressGroupActive {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: #333;
 }
 
 .progressIcon {
   position: relative;
-  border: 2px solid #AFB1BD;
   width: 18px;
   height: 18px;
-  border-radius: 50%;
-  margin-right: 5px;
+  padding-right: 10px;
 }
 
 .progressIcon >.text {
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   font-size: 14px;
   line-height: 18px;
+  text-align: center;
+  width: 18px;
+  border: 1.5px solid #AFB1BD;
+  border-radius: 50%;
+}
+
+.progressIcon>.textActive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  width: 18px;
+  border: 1.5px solid #333;
+  border-radius: 50%;
 }
 
 .completeIcon {
-  width: 18px;
-  height: 18px;
+  width: 21px;
+  height: 21px;
 }
 
 .progressBar {
@@ -46,4 +67,11 @@
   width: 60px;
   margin: 30px;
   background-color: #E8E9F6;
+}
+
+.progressBarActive {
+  height: 1.5px;
+  width: 60px;
+  margin: 30px;
+  background-color: #333;
 }

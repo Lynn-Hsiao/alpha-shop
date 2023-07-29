@@ -11,7 +11,7 @@ function StepOneAddress () {
             <div className={styles.inputLabel}>稱謂</div>
             <div className={styles.selectContainer}>
               <select className={styles.selectStyle}>
-                <option value="mr" selected>先生</option>
+                <option value="mr">先生</option>
                 <option value="ms">女士</option>
                 <option value="mx">不明</option>
               </select>
