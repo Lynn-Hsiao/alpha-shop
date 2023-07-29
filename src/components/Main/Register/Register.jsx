@@ -1,5 +1,6 @@
+import React from 'react'
 import styles from './Register.module.css'
-import StepProgress from './StepProgress';
+import StepProgress from './StepProgress'
 import StepOneAddress from './StepOneAddress'
 import StepTwoShipping from './StepTwoShipping'
 import StepThreePayment from './StepThreePayment'
@@ -7,7 +8,7 @@ import ProgressControl from './ProgressControl'
 
 function Register() {
   return (
-    <div className={styles.step}>
+    <div >
       <StepProgress/>
       <section className={styles.formContainer}>
         <StepOneAddress/>
