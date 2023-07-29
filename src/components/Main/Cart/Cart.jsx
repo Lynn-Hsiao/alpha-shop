@@ -13,9 +13,9 @@ function Product ({id, name, img, price, quantity, handlePlusClick, handleMinusC
         <div className={styles.productName}>{name}</div>
         <div className={styles.productControlContainer}>
           <div className={styles.productControl}>
-            <Minus onClick={() => handleMinusClick(id, price, quantity)} />
+            <Minus className={styles.cursor} onClick={() => handleMinusClick(id, price, quantity)} />
             <span className={styles.productCount}>{quantity}</span>
-            <Plus onClick={() =>handlePlusClick(id, price, quantity)} /> 
+            <Plus className={styles.cursor} onClick={() =>handlePlusClick(id, price, quantity)} /> 
             
           </div>
         </div>

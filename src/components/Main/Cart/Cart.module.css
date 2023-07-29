@@ -62,3 +62,7 @@
 .productInfoPrice {
   font-weight: 700;
 }
+
+.cursor:hover {
+  cursor: pointer;
+}
