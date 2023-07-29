@@ -12,9 +12,4 @@ code {
     monospace;
 }
 
-.mainContainer {
-  display: flex;
-  justify-content: space-around;
-  padding: 0.2em 4em;
-}
 
