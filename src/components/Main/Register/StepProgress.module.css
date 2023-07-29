@@ -14,11 +14,13 @@
 
 .progressGroup {
   display: flex;
+  align-items: center;
+  color: #AFB1BD;
 }
 
 .progressIcon {
   position: relative;
-  border: 2px solid #333;
+  border: 2px solid #AFB1BD;
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -42,9 +44,6 @@
 .progressBar {
   height: 1.5px;
   width: 60px;
-  background-color: #999;
-}
-
-.progressLabel {
-  /* color: #AFB1BD; */
+  margin: 30px;
+  background-color: #E8E9F6;
 }
