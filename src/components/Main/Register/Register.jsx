@@ -7,8 +7,8 @@ import StepThreePayment from './StepThreePayment'
 import ProgressControl from './ProgressControl'
 
 function Register() {
-  const [step, setStep] = useState(1 )
-  // const [active, setActive] = useState(true)
+  const [step, setStep] = useState(1)
+  const [delivery, setDelivery] = useState('standard')
   const [checked, setChecked] = useState(0)
   const [addressData, setAddressData] = useState({
     title: "",
@@ -25,11 +25,11 @@ function Register() {
     CardCVCCCV: ""
   })
 
-  function DisplayStep({step}) {
+  function DisplayStep({step, addressData, delivery, cardData}) {
     if (step === 1) {
       return <StepOneAddress addressData={addressData}/>
     } else if (step === 2) {
-      return <StepTwoShipping checked={checked}/>
+      return <StepTwoShipping delivery={delivery}/>
     } else {
       return <StepThreePayment cardData={cardData}/>
     }
@@ -38,11 +38,11 @@ function Register() {
 
   return (
     <div >
-      <StepProgress step={step} setStep={setStep} checked={checked}/>
+      <StepProgress step={step} checked={checked}/>
       <section className={styles.formContainer}>
-        <DisplayStep step={step} addressData={addressData} checked={checked} cardData={cardData}/>
+        <DisplayStep step={step} addressData={addressData} checked={checked} delivery={delivery} setDelivery={setDelivery} cardData={cardData}/>
       </section>
-      <ProgressControl step={step} setStep={setStep} checked={checked} setChecked={setChecked}/> 
+      <ProgressControl step={step} setStep={setStep} checked={checked} setChecked={setChecked} setAddressData={setAddressData} setCardData={setCardData}/> 
     </div>
   )
 }
