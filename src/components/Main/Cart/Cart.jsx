@@ -1,8 +1,8 @@
 import styles from './Cart.module.css'
-import productsData from './productData'
-import { useState } from 'react'
+import { useContext } from 'react'
 import { ReactComponent as Plus } from '../../../icons/plus.svg'
 import { ReactComponent as Minus } from '../../../icons/minus.svg'
+import CartContext from '../../Context/CartContext'
 
 
 function Product ({id, name, img, price, quantity, handlePlusClick, handleMinusClick}) {
@@ -25,8 +25,9 @@ function Product ({id, name, img, price, quantity, handlePlusClick, handleMinusC
 }
 
 function Cart () {
-  const [cartItem, setCartItem ] = useState(productsData)
-  const [totalPrice, setTotalPrice] = useState(0)
+  //由 CartContext 拿取 cartItem 物件 及 setCartItem 函式資料
+  const { cartItem, setCartItem } = useContext(CartContext)
+  const { totalPrice, setTotalPrice } = useContext(CartContext)
 
   function calculate(price) {
     setTotalPrice(totalPrice + price)

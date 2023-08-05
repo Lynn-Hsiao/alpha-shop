@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import styles from './index.module.css';
 import reportWebVitals from './reportWebVitals';
 import Header from './components/Header/Header'
 import Main from './components/Main/Main';
+import CartContextProvider from './components/Context/CartContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Header />
-    <Main />
+    <CartContextProvider>
+      <Main />
+    </CartContextProvider>
   </React.StrictMode>
 );
 

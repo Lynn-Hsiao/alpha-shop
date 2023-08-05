@@ -15,4 +15,4 @@ const productsData = [
   },
 ];
 
-export default productsData;
+export default productsData
