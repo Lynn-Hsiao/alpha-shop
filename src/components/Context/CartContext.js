@@ -9,14 +9,11 @@ const CartContextProvider = ({children}) => {
 
   return(
     //value必須是一個物件, 不能是多個props?
-    <CartContextProvider value={{cartItem, setCartItem, totalPrice, setTotalPrice}}>
+    <CartContext.Provider value={{cartItem, setCartItem, totalPrice, setTotalPrice}}>
       {children}
-    </CartContextProvider>
+    </CartContext.Provider>
   )
 }
 
-
-
-//哪個才會是default呢? default function 可以放兩個嗎? 
 export { CartContextProvider }
 export default CartContext

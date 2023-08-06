@@ -1,7 +1,8 @@
 import styles from './Cart.module.css'
-import { useContext } from 'react'
 import { ReactComponent as Plus } from '../../../icons/plus.svg'
 import { ReactComponent as Minus } from '../../../icons/minus.svg'
+
+import { useContext } from 'react'
 import CartContext from '../../Context/CartContext'
 
 
