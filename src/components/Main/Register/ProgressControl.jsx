@@ -1,6 +1,9 @@
 import styles from './ProgressControl.module.css'
 import { ReactComponent as RightArrow} from '../../../icons/right-arrow.svg'
 import { ReactComponent as LeftArrow} from '../../../icons/left-arrow.svg'
+import { useContext } from 'react'
+import FormContext  from '../../Context/FormContext'
+import CartContext from '../../Context/CartContext'
 
 function PrevButton({setStep, setChecked}) {
   return(
@@ -14,7 +17,7 @@ function PrevButton({setStep, setChecked}) {
   )
 }
 
-function NextButton({setStep, setChecked, setAddressData, setCardData}) {
+function NextButton({setStep, setChecked}) {
   return(
     <button className={styles.next} onClick={() => {
       setStep((currentStep) => currentStep + 1); 
@@ -25,7 +28,7 @@ function NextButton({setStep, setChecked, setAddressData, setCardData}) {
   )
 }
 
-function ShowButton ({step, setStep, setChecked, setAddressData, setCardData} ) {
+function ShowButton ({step, setStep, setChecked, setAddressData, cardData, setCardData, totalPrice}) {
   if (step === 1) {
     return (
       <section className={styles.buttonGroup} data-phase="address">
@@ -45,9 +48,18 @@ function ShowButton ({step, setStep, setChecked, setAddressData, setCardData} ) 
     return (
       <section className={styles.buttonGroup} data-phase="credit-card">
         <PrevButton setStep={setStep} setChecked={setChecked}/> 
-        <button className={styles.next} setStep={setStep} setChecked={setChecked} setCardData={setCardData} onClick={() => {
+        <button className={styles.next} setStep={setStep} setChecked={setChecked} setCardData={setCardData} cardData={cardData} onClick={() => {
           setStep((currentStep) => currentStep + 1); 
           setChecked((currentChecked) => currentChecked + 1);
+          console.log(cardData)
+          console.log(`
+            請核對以下資訊
+            持卡人 :${cardData.userName}
+            卡號 :${cardData.cardNumber}
+            有效期限 :${cardData.cardExpirationDate}
+            CVC / CCV :${cardData.cardCVCCCV}
+            總金額 :${totalPrice}
+          `)
           alert("Form Submitted!")
         }}>
           確認下單
@@ -57,10 +69,13 @@ function ShowButton ({step, setStep, setChecked, setAddressData, setCardData} ) 
   }
 }
 
-function ProgressControl ({step, setStep, setChecked, setAddressData, setCardData}) {
+function ProgressControl () {
+  const { step, setStep, setChecked, setAddressData, cardData, setCardData } = useContext(FormContext)
+  const { totalPrice } = useContext(CartContext)
+
   return (
     <section className={styles.progressControlContainer}>
-      <ShowButton step={step} setStep={setStep} setChecked={setChecked} setAddressData={setAddressData} setCardData={setCardData} />
+      <ShowButton step={step} setStep={setStep} setChecked={setChecked} setAddressData={setAddressData} cardData={cardData} setCardData={setCardData} totalPrice={totalPrice}/>
     </section>
   )
 }

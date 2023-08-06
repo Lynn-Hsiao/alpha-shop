@@ -18,7 +18,7 @@ const FormContextProvider = ({children}) => {
     cardUserName: "",
     cardNumber: "",
     cardExpirationDate: "",
-    CardCVCCCV: ""
+    cardCVCCCV: ""
   })
 
   const valueInput = {
