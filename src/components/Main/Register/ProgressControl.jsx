@@ -51,10 +51,9 @@ function ShowButton ({step, setStep, setChecked, setAddressData, cardData, setCa
         <button className={styles.next} setStep={setStep} setChecked={setChecked} setCardData={setCardData} cardData={cardData} onClick={() => {
           setStep((currentStep) => currentStep + 1); 
           setChecked((currentChecked) => currentChecked + 1);
-          console.log(cardData)
           console.log(`
             請核對以下資訊
-            持卡人 :${cardData.userName}
+            持卡人 :${cardData.cardUserName}
             卡號 :${cardData.cardNumber}
             有效期限 :${cardData.cardExpirationDate}
             CVC / CCV :${cardData.cardCVCCCV}
