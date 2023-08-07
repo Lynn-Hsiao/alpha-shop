@@ -1,8 +1,12 @@
 import styles from "./StepProgress.module.css"
 import  { ReactComponent as PgComplete } from "../../../icons/pg-complete.svg"
+import { useContext } from 'react'
+import  FormContext from '../../Context/FormContext'
 
 
-function StepProgress ({step, checked}) {
+function StepProgress() {
+  const { step, checked } = useContext(FormContext)
+
   return (
     <div>
       <section className={styles.progressContainer}>

@@ -14,7 +14,7 @@ function Register() {
   const { addressData, setAddressData } = useContext(FormContext)
   const { cardData, setCardData } = useContext(FormContext)
 
-  function DisplayStep({step, addressData, delivery, cardData}) {
+  function DisplayStep( ) {
     if (step === 1) {
       return <Step1 addressData={addressData}/>
     } else if (step === 2) {
@@ -23,7 +23,6 @@ function Register() {
       return <Step3 cardData={cardData}/>
     }
   }
-
 
   return (
     <div >
