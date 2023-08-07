@@ -1,11 +1,11 @@
-import styles from './StepThreePayment.module.css'
+import styles from './Step3.module.css'
 import { useContext } from 'react'
 import  FormContext from '../../Context/FormContext'
 
-function StepThreePayment () {
+function Step3 () {
 
   const { cardData, setCardData } = useContext(FormContext)   
-  console.log(cardData)
+
   return (
     <form data-phase="credit-card">
       <h3 className={styles.formTitle}>付款資訊</h3>
@@ -39,4 +39,4 @@ function StepThreePayment () {
   )
 }
 
-export default StepThreePayment;
+export default Step3;

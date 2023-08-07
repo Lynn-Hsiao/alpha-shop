@@ -1,7 +1,7 @@
-import styles from "./StepOneAddress.module.css"
+import styles from "./Step1.module.css"
 
 
-function StepOneAddress () {
+function Step1 () {
 
   return (
     <form data-phase="address">
@@ -81,4 +81,4 @@ function StepOneAddress () {
   )
 }
 
-export default StepOneAddress;
+export default Step1;

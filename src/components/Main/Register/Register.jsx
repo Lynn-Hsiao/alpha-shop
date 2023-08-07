@@ -2,9 +2,9 @@ import React, { useContext } from 'react'
 import FormContext from '../../Context/FormContext'
 import styles from './Register.module.css'
 import StepProgress from './StepProgress'
-import StepOneAddress from './StepOneAddress'
-import StepTwoShipping from './StepTwoShipping'
-import StepThreePayment from './StepThreePayment'
+import Step1 from './Step1'
+import Step2 from './Step2'
+import Step3 from './Step3'
 import ProgressControl from './ProgressControl'
 
 function Register() {
@@ -14,31 +14,13 @@ function Register() {
   const { addressData, setAddressData } = useContext(FormContext)
   const { cardData, setCardData } = useContext(FormContext)
 
-  // const [step, setStep] = useState(1)
-  // const [delivery, setDelivery] = useState('standard')
-  // const [checked, setChecked] = useState(0)
-  // const [addressData, setAddressData] = useState({
-  //   title: "",
-  //   name: "",
-  //   phone: "",
-  //   email: "",
-  //   county: "",
-  //   address: ""
-  // })
-  // const [cardData, setCardData] = useState({
-  //   cardUserName: "",
-  //   cardNumber: "",
-  //   cardExpirationDate: "",
-  //   CardCVCCCV: ""
-  // })
-
   function DisplayStep({step, addressData, delivery, cardData}) {
     if (step === 1) {
-      return <StepOneAddress addressData={addressData}/>
+      return <Step1 addressData={addressData}/>
     } else if (step === 2) {
-      return <StepTwoShipping delivery={delivery}/>
+      return <Step2 delivery={delivery}/>
     } else {
-      return <StepThreePayment cardData={cardData}/>
+      return <Step3 cardData={cardData}/>
     }
   }
 

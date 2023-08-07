@@ -1,6 +1,6 @@
-import styles from './StepTwoShipping.module.css'
+import styles from './Step2.module.css'
 
-function StepTwoShipping () {
+function Step2 () {
   return (
     <form data-phase="shipping">
       <h3 className={styles.formTitle}>運送方式</h3>
@@ -32,4 +32,4 @@ function StepTwoShipping () {
   )
 }
 
-export default StepTwoShipping;
+export default Step2;
