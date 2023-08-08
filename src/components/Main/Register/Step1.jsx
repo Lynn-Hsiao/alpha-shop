@@ -36,7 +36,7 @@ function Step1 () {
         <div className={styles.formBodyItem}>
           <div className={styles.inputGroup1}>
             <div className={styles.inputLabel}>縣市</div>
-            <div class="select-container">
+            <div className="select-container">
               <select className={styles.selectStyle} required>
                 <option value="">請選擇縣市</option>
                 <option value="KLU">基隆市</option>
