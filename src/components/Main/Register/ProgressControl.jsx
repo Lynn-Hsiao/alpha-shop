@@ -5,7 +5,8 @@ import { useContext } from 'react'
 import FormContext  from '../../Context/FormContext'
 import CartContext from '../../Context/CartContext'
 
-function PrevButton({setStep, setChecked}) {
+function PrevButton() {
+  const {setStep, setChecked} = useContext(FormContext)
   return(
     <button className={styles.prev} onClick={() => {
       setStep((currentStep) => currentStep - 1);
@@ -17,7 +18,8 @@ function PrevButton({setStep, setChecked}) {
   )
 }
 
-function NextButton({setStep, setChecked}) {
+function NextButton() {
+  const {setStep, setChecked} = useContext(FormContext)
   return(
     <button className={styles.next} onClick={() => {
       setStep((currentStep) => currentStep + 1); 
@@ -28,7 +30,10 @@ function NextButton({setStep, setChecked}) {
   )
 }
 
-function ShowButton ({step, setStep, setChecked, setAddressData, cardData, setCardData, totalPrice}) {
+function ShowButton () {
+  const { step, setStep, setChecked, setAddressData, cardData, setCardData } = useContext(FormContext)
+  const { totalPrice } = useContext(CartContext)
+
   if (step === 1) {
     return (
       <section className={styles.buttonGroup} data-phase="address">
