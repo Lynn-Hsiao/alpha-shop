@@ -5,7 +5,7 @@ const FormContext = createContext()
 const FormContextProvider = ({children}) => {
   const [step, setStep] = useState(1)
   const [delivery, setDelivery] = useState('standard')
-  const [checked, setChecked] = useState(0)
+  const [done, setDone] = useState(0)
   const [addressData, setAddressData] = useState({
     title: "",
     name: "",
@@ -26,8 +26,8 @@ const FormContextProvider = ({children}) => {
     setStep,
     delivery, 
     setDelivery,
-    checked,
-    setChecked,
+    done,
+    setDone,
     addressData,
     setAddressData,
     cardData,
