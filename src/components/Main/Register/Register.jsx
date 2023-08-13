@@ -8,29 +8,26 @@ import Step3 from './Step3'
 import ProgressControl from './ProgressControl'
 
 function Register() {
-  const { step, setStep }  = useContext(FormContext)
-  const { delivery, setDelivery } = useContext(FormContext)
-  const { checked, setChecked } = useContext(FormContext)
-  const { addressData, setAddressData } = useContext(FormContext)
-  const { cardData, setCardData } = useContext(FormContext)
+  const { step }  = useContext(FormContext)
+
 
   function DisplayStep( ) {
     if (step === 1) {
-      return <Step1 addressData={addressData}/>
+      return <Step1/>
     } else if (step === 2) {
-      return <Step2 delivery={delivery}/>
+      return <Step2 />
     } else {
-      return <Step3 cardData={cardData}/>
+      return <Step3 />
     }
   }
 
   return (
     <div >
-      <StepProgress step={step} checked={checked}/>
+      <StepProgress />
       <section className={styles.formContainer}>
-        <DisplayStep step={step} addressData={addressData} checked={checked} delivery={delivery} setDelivery={setDelivery} cardData={cardData}/>
+        <DisplayStep />
       </section>
-      <ProgressControl step={step} setStep={setStep} checked={checked} setChecked={setChecked} setAddressData={setAddressData} setCardData={setCardData}/> 
+      <ProgressControl /> 
     </div>
   )
 }

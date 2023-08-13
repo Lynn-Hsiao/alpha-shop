@@ -6,11 +6,11 @@ import FormContext  from '../../Context/FormContext'
 import CartContext from '../../Context/CartContext'
 
 function PrevButton() {
-  const {setStep, setChecked} = useContext(FormContext)
+  const {setStep, setDone} = useContext(FormContext)
   return(
     <button className={styles.prev} onClick={() => {
       setStep((currentStep) => currentStep - 1);
-      setChecked((currentChecked) => currentChecked - 1)}      
+      setDone((currentDone) => currentDone - 1)}      
       }>
       <LeftArrow className={styles.leftArrow}/>
       上一步
@@ -19,11 +19,11 @@ function PrevButton() {
 }
 
 function NextButton() {
-  const {setStep, setChecked} = useContext(FormContext)
+  const {setStep, setDone} = useContext(FormContext)
   return(
     <button className={styles.next} onClick={() => {
       setStep((currentStep) => currentStep + 1); 
-      setChecked((currentChecked) => currentChecked + 1)}}>
+      setDone((currentDone) => currentDone + 1)}}>
       下一步
       <RightArrow className={styles.rightArrow}/>
     </button> 
@@ -31,7 +31,7 @@ function NextButton() {
 }
 
 function ShowButton () {
-  const { step, setStep, setChecked, setAddressData, cardData, setCardData } = useContext(FormContext)
+  const { step, setStep, setDone, cardData } = useContext(FormContext)
   const { totalPrice } = useContext(CartContext)
 
   if (step === 1) {
@@ -39,23 +39,23 @@ function ShowButton () {
       <section className={styles.buttonGroup} data-phase="address">
         <button className={styles.hiddenPrev}>
         </button>
-        <NextButton setStep={setStep} setChecked={setChecked} setAddressData={setAddressData}/> 
+        <NextButton /> 
       </section>
     )
   } else if (step === 2) {
     return (
       <section className={styles.buttonGroup}>
-        <PrevButton setStep={setStep} setChecked={setChecked}/> 
-        <NextButton setStep={setStep} setChecked={setChecked}/> 
+        <PrevButton/> 
+        <NextButton/> 
       </section>
     )
   } else {
     return (
       <section className={styles.buttonGroup} data-phase="credit-card">
-        <PrevButton setStep={setStep} setChecked={setChecked}/> 
-        <button className={styles.next} setStep={setStep} setChecked={setChecked} setCardData={setCardData} cardData={cardData} onClick={() => {
+        <PrevButton /> 
+        <button className={styles.next} onClick={() => {
           setStep((currentStep) => currentStep + 1); 
-          setChecked((currentChecked) => currentChecked + 1);
+          setDone((currentDone) => currentDone + 1);
           console.log(`
             請核對以下資訊
             持卡人 :${cardData.cardUserName}
@@ -74,12 +74,9 @@ function ShowButton () {
 }
 
 function ProgressControl () {
-  const { step, setStep, setChecked, setAddressData, cardData, setCardData } = useContext(FormContext)
-  const { totalPrice } = useContext(CartContext)
-
   return (
     <section className={styles.progressControlContainer}>
-      <ShowButton step={step} setStep={setStep} setChecked={setChecked} setAddressData={setAddressData} cardData={cardData} setCardData={setCardData} totalPrice={totalPrice}/>
+      <ShowButton/>
     </section>
   )
 }
